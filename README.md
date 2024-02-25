@@ -1,3 +1,13 @@
 ### Made
-- **changed  auth/login.blade.php** 
-- **changed  auth/register.blade.php** 
+- **php artisan make:controller ShopController**  
+- **created route**  
+- **created shop.blade**  
+- **changed app.blade**  
+- **php artisan make:model Brand -m**  
+- **php artisan make:model Category -m**  
+- **php artisan make:model Product -m**   
+- **php artisan migrate**   
+- **php artisan make:factory BrandFactory --model=Brand**   
+- **php artisan make:factory CategoryFactory --model=Category**   
+- **php artisan make:factory ProductFactory --model=Product**   
+- **php artisan db:seed**   
