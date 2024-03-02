@@ -1,3 +1,5 @@
 ### Made
-- **created resources/views/pagination/default.blade.php**  
-- **changed resources/views/shop.blade.php**  
+- **changed ShopController**   
+- **created route*   
+- **created resources/views/details.blade.php**   
+- **changed resources/views/shop.blade.php**   
