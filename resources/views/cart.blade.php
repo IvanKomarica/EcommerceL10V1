@@ -64,8 +64,8 @@
                                             <div class="col">
                                                 <div class="qty-box">
                                                     <div class="input-group">
-                                                        <input type="text" name="quantity" class="form-control input-number"
-                                                               value="1">
+                                                        <input type="text" name="quantity" data-rowid="{{ $item->rowId }}" class="form-control input-number"
+                                                               value="{{ $item->qty }}" onchange="updateQuantity(this)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,7 +88,7 @@
                                         <div class="qty-box">
                                             <div class="input-group">
                                                 <input type="number" name="quantity"
-                                                       data-rowid="ba02b0dddb000b25445168300c65386d"
+                                                       data-rowid="{{ $item->rowId }}"
                                                        class="form-control input-number" value="{{ $item->qty }}">
                                             </div>
                                         </div>
@@ -178,4 +178,20 @@
             @endif
         </div>
     </section>
+    <form id="updateCartQty" method="POST" action="{{ route('cart.update') }}">
+        @csrf
+        @method('PUT')
+        <input type="hidden" id="rowId" name="rowId">
+        <input type="hidden" id="quantity" name="quantity">
+    </form>
 @endsection
+@push('scripts')
+    <script>
+        function updateQuantity(qty)
+        {
+            $('#rowId').val($(qty).data('rowid'))
+            $('#quantity').val($(qty).val())
+            $('#updateCartQty').submit()
+        }
+    </script>
+@endpush
